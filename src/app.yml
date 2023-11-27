@@ -1,0 +1,44 @@
+name: "Risc0-requestor"
+version: "0.1.0"
+about: Risc0-requestor
+authors: "Risc0-requestor"
+
+# AppSettings can be defined as a list and are **not** ascii case sensitive
+settings:
+    - ColoredHelp
+
+# All subcommands must be listed in the 'subcommand:' object, where the key to
+# the list is the name of the subcommand, and all settings for that command are
+# are part of a Hash
+args:
+    - key:
+          short: k
+          long: key
+          help: Set the private key to sign the blockchain request
+          takes_value: true
+          default_value: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+    - listen:
+          short: l
+          long: listen
+          help: Set the rpc server api endpoint
+          takes_value: true
+          default_value: "0.0.0.0:5678" #port:5678
+    - relayer:
+          short: r
+          long: relayer
+          help: The relayer rpc endpoint
+          takes_value: true
+          default_value: "http://127.0.0.1:6789"
+    - interval:
+          short: i
+          long: interval
+          help: The interval time to send dummy task
+          takes_value: true
+          default_value: "3600"
+    - contract:
+          short: c
+          long: contract
+          help: Risc0 demo contract
+          takes_value: true
+          default_value: "xxxxxxxxxxxxxxxxxxxxxxxxxx"
+    
